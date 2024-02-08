@@ -1,0 +1,43 @@
+En la seccion 7 se crea un modulo que sera reutilizable para otros
+desarrolladores
+
+---Clase 1: Iniciar un modulo que otros puedan utilizar
+se crea el modulo del proyecto en la terminal de la carpeta donde
+nos se va a crear el proyecto y se inicializa el modulo con:
+
+go mod init github.com/roviar04/greetings
+
+
+
+---Clase 2: LLamar a tu codigo desde otro modulo
+En esta clase se despliega el modulo
+
+Para importar un modulo local, debemos indicar exactamente la ruta 
+donde se encuentra ese modulo con:
+
+//ya que se encuentra en src retrocede con .. y agrega el nombre
+go mod edit -replace github.com/roviar04/greetings=../greetings
+
+'go mod tidy' agrega los paquetes faltantes y elimina los que no
+esten siendo utilizados
+
+
+
+---Clase 3: Devolver y manejar un error
+Se agrega el parametro error para que hello reciba 2 valores,
+de tipo string y de tipo error el cual sera personalizado
+
+
+
+--Clase 4: Devolver un saludo aleatorio
+Se agrega una nueva funcion y se crea un slice para devolver 
+saludos aleatorios utilizando rand.intn() y len() 
+
+--Clase 5: Devolver saludos para varias personas
+Se agrega la funcion Hellos para insertar varios nombres y mandar
+saludos a diferentes personas
+
+---Clase 6 agregar una prueba
+Se agrega una prueba para revelar errores al realizar cambios
+Se crea greetings_test y se crean 2 funciones para verificar la
+funcionalidad del codigo
